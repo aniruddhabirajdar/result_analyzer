@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_17_192521) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_19_115348) do
   create_table "daily_result_stats", force: :cascade do |t|
     t.date "date"
     t.string "subject"
@@ -19,6 +19,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_17_192521) do
     t.integer "result_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["date", "subject"], name: "index_daily_result_stats_on_date_and_subject", unique: true
+  end
+
+  create_table "monthly_averages", force: :cascade do |t|
+    t.date "date"
+    t.string "subject"
+    t.decimal "monthly_avg_low"
+    t.decimal "monthly_avg_high"
+    t.integer "monthly_result_count_used"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["date", "subject"], name: "index_monthly_averages_on_date_and_subject", unique: true
   end
 
   create_table "result_data", force: :cascade do |t|
