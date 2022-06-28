@@ -4,7 +4,7 @@ namespace :test_data do
   task :dump => :environment do
     data = []
     ((Date.today - 30)..Date.today).each do |date|
-    1000.times do |x|
+    5000.times do |x|
       data << {
         subject: Faker::Educator.subject,
         timestamp: date + Time.parse(Faker::Time.backward(days: 0, period: :evening).strftime("%I:%M%p")).seconds_since_midnight.seconds,

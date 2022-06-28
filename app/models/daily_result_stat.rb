@@ -8,7 +8,7 @@ class DailyResultStat < ApplicationRecord
 
     def self.monthly_averages(start_date,end_date)
         self.get_by_between_date( start_date, end_date )
-                            .select("subject,date,min(daily_low) as monthly_avg_low,max(daily_high) as monthly_avg_high,SUM(result_count) as monthly_result_count_used") 
+                            .select("subject,max(date) as date,min(daily_low) as monthly_avg_low,max(daily_high) as monthly_avg_high,SUM(result_count) as monthly_result_count_used") 
                             .group_by_subject
     end
 
