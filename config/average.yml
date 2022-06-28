@@ -1,0 +1,3 @@
+shared:
+  month_max_loockback: 30
+  monthly_avarage_threshold: 200

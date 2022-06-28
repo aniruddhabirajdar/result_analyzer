@@ -1,0 +1,8 @@
+monthly_average:
+  cron: "0 5 * * mon#3"
+  class: "MonthlyAveragesCalculationJob"
+  queue: default
+daily_average:
+  cron: "*/1 * * * *"
+  class: "DailyResultStatsCalculationJob"
+  queue: default  
