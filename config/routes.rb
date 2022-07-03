@@ -1,10 +1,10 @@
-require 'sidekiq/web'
-require 'sidekiq/cron/web' 
+# require 'sidekiq/web'
+# require 'sidekiq/cron/web' 
 
 
 # Configure Sidekiq-specific session middleware
-Sidekiq::Web.use ActionDispatch::Cookies
-Sidekiq::Web.use ActionDispatch::Session::CookieStore, key: "_interslice_session"
+# Sidekiq::Web.use ActionDispatch::Cookies
+# Sidekiq::Web.use ActionDispatch::Session::CookieStore, key: "_interslice_session"
 
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :results_data, only: [:create]
 
 
-mount Sidekiq::Web => '/sidekiq'
+# mount Sidekiq::Web => '/sidekiq'
 
 end
 

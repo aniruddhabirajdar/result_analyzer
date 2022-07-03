@@ -1,6 +1,6 @@
 require "test_helper"
 
-class DailyResultStatsCalculationJobTest < ActiveJob::TestCase
+class DailyResultStatesCalculationJobTest < ActiveJob::TestCase
   # test "the truth" do
   #   assert true
   # end

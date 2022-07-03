@@ -14,6 +14,6 @@ namespace :test_data do
   end
     # p data
     ResultData.insert_all(data)
-    # DailyResultStat.insert_all(ResultData.daily_result_stats(date).as_json(:except => :id) )
+    # DailyResultState.insert_all(ResultData.daily_result_stats(date).as_json(:except => :id) )
   end
 end
